@@ -1,2 +1,94 @@
 // Import page-specific CSS files here.
 @import "home";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-image: url("https://c.wallhere.com/photos/ef/1d/white_black_net_sport_contrast_idea_football_goal-832143.jpg!d");
+  color: rgb(246, 246, 246);
+  font-family: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container-teams {
+  background-image: url("https://c.wallhere.com/photos/ef/1d/white_black_net_sport_contrast_idea_football_goal-832143.jpg!d");
+  min-height: 100vh;
+  color: $light-gray;
+}
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.teams-scroll {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  a {
+    color: white;
+    font-size: 3rem;
+    &:hover {
+      color: rgba(255, 255, 255, 0.517);
+    }
+  }
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin: 0;
+  height: 100vh;
+}
+
+.banner h1 {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 56px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 28px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: 'Poppins', sans-serif;
+}
+
+.teams-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px;
+  color: rgba(255, 255, 255, 0.69);
+  a {
+    color: rgba(255, 255, 255, 0.69);
+    &:hover {
+      color: white;
+    }
+  }
+}

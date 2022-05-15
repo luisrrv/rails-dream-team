@@ -1,0 +1,29 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://image.winudf.com/v2/image1/bGl0dGxlYXBwYXMuRm9vdGJhbGwud2FsbHBhcGVyc19zY3JlZW5fN18xNTgyNzEyNjc4XzA5OA/screen-8.jpg?fakeurl=1&type=.webp);">
+  <div class="container banner-content">
+    <div>
+      <h1>Dream Team</h1>
+      <p>Build your dream team with the players you want</p>
+    </div>
+    <div class="teams-scroll">
+      <p>Teams</p>
+      <a class="btn btn-flat" href="#allteams"><i class="fas fa-angle-down"></i></a>
+    </div>
+  </div>
+</div>
+<div id="allteams" class="container-teams p-3">
+  <div class="teams-header">
+    <h1>Teams</h1>
+    <%= link_to new_team_path, class: 'nav-a' do %>
+      <p><i class="fas fa-plus"></i></p>
+    <% end %>
+  </div>
+  <div class="container cards">
+    <% @teams.each do |team| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= team.photo.attached? ? cl_image_path(team.photo.key) : image_path("https://source.unsplash.com/1600x900/?#{team.name}") %>)">
+        <%= link_to team_path(team), class: "card-team-name" do %>
+          <%= team.name %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

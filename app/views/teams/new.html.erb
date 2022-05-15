@@ -1,0 +1,18 @@
+<div class="container p-3">
+  <nav class="">
+    <%= link_to teams_path, class: 'nav-a' do %>
+      <p><i class="fas fa-home"></i></p>
+    <% end %>
+    <%# <a class="navbar-brand" href="#">Navbar</a> %>
+  </nav>
+  <h1>Add a new team</h1>
+  <div class="container card p-4 bg-dark mt-5">
+    <%# <h1>Spawn a Monster</h1> %>
+    <%= simple_form_for @team do |f| %>
+      <%= f.input :name %>
+      <%= f.input :photo, as: :file %>
+      <%# <%= f.input :image_url %>
+      <%= f.submit 'Add', class: 'btn btn-light' %>
+    <% end %>
+  </div>
+</div>

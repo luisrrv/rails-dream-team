@@ -1,0 +1,27 @@
+<div class="container show p-3">
+  <nav class="">
+    <%= link_to teams_path, class: 'nav-a' do %>
+      <p><i class="fas fa-home"></i></p>
+    <% end %>
+    <%= link_to new_team_signing_path(@team), class: 'nav-a' do %>
+      <p><i class="fas fa-user-plus"></i></p>
+    <% end %>
+    <%# <a class="navbar-brand" href="#">Navbar</a> %>
+  </nav>
+  <h1><%= @team.name %></h1>
+</div>
+<div class="cards m-3 p-3">
+  <% @signings.each do |signing| %>
+    <div class="card-product">
+      <%= image_tag (signing.position == 'Goalkeeper' ? 'avatargc.jpg' : 'avatar1.jpg') %>
+      <div class="card-product-infos">
+        <h2><%= signing.player.name %></h2>
+        <p><%= signing.position %></p>
+      </div>
+      <%= link_to signing_path(signing), method: :delete, data: {confirm: "Are you sure?"}, class: 'card-trip-user trash-btn' do %>
+        <i class="fas fa-trash-alt text-danger"></i>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+</div>
