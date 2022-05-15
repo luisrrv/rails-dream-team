@@ -10,7 +10,6 @@ puts "Cleaning the db..."
 Player.destroy_all
 Team.destroy_all
 
-Team.create!(name: 'Dream Team')
 30.times do
   Player.create!(name: Faker::Sports::Football.unique.player)
 end
