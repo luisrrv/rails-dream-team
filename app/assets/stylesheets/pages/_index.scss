@@ -18,6 +18,9 @@ body {
   background-image: url("https://c.wallhere.com/photos/ef/1d/white_black_net_sport_contrast_idea_football_goal-832143.jpg!d");
   color: rgb(246, 246, 246);
   font-family: 'Poppins', sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 ::-webkit-scrollbar {
