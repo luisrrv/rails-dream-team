@@ -1,3 +1,4 @@
+<%#= javascript_pack_tag 'autocomplete'%>
 <div class="container p-3">
   <nav class="">
     <%= link_to teams_path, class: 'nav-a' do %>
@@ -12,8 +13,15 @@
   <div class="container card p-4 bg-dark mt-5">
     <%# <h1>Spawn a Monster</h1> %>
     <%= simple_form_for [@team, @signing] do |f| %>
-      <%= f.association :player %>
-      <%= f.input :position, collection: @positions %>
+      <%#= f.input :player, as: :autocomplete, source: @players %>
+      <%#= f.input :player, as: :search, data: {autocomplete_source: @players.name} %>
+      <%#= f.label :player_name %> <br/>
+      <%#= f.text_field :player_name %>
+      <%= f.association :player, collection: @players, include_blank: false %>
+      <%= f.input :position, collection: @positions, as: :radio_buttons, collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'}, class: 'new-place-input', checked: 'Goalkeeper' %>
       <%# <%= f.input :image_url %>
       <%= f.submit 'Add', class: 'btn btn-light' %>
     <% end %>

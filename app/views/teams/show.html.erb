@@ -13,7 +13,7 @@
 <div class="cards m-3 p-3">
   <% @signings.each do |signing| %>
     <div class="card-product">
-      <%= image_tag (signing.position == 'Goalkeeper' ? 'avatargc.jpg' : 'avatar1.jpg') %>
+      <%= cl_image_tag signing.player.photo.key %>
       <div class="card-product-infos">
         <h2><%= signing.player.name %></h2>
         <p><%= signing.position %></p>
