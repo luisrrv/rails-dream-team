@@ -1,8 +1,15 @@
 class SigningsController < ApplicationController
   def new
+    if params[:query].present?
+      @players = Player.where("name ILIKE ?", "%#{params[:query]}%").first(8)
+    else
+      @players = Player.first(8)
+    end
+    # @players = Player.where(name: params[:name]) if params[:name].present?
+
     @signing = Signing.new
     @team = Team.find(params[:team_id])
-    @players = Player.where.not(id: @team.players).order(name: :asc)
+    # @players = Player.where.not(id: @team.players).order(name: :asc)
     @positions = ['Goalkeeper', 'Right Back', 'Left Back', 'Center Back', 'Sweeper', 'Left Wing', 'Right Wing', 'Defensive Midfield', 'Centre Midfield', 'Attacking Midfield', 'Left Midfield', 'Right Midfield', 'Stiker' ]
   end
 
@@ -10,11 +17,23 @@ class SigningsController < ApplicationController
     @signing = Signing.new(signing_params)
     @team = Team.find(params[:team_id])
     @signing.team = @team
-    @signing.player.position = @signing.position
+    if @signing.player.nil?
+      redirect_to new_team_signing_path(@team), flash: {notice: 'Please select a player'}
+      return false
+    else
+      @signing.player.position = @signing.position
+    end
     if @signing.save
       redirect_to team_path(@team)
     else
-      @players = Player.where.not(id: @team.players).order(name: :asc)
+      if params[:query].present?
+        @players = Player.where("title ILIKE ?", "%#{params[:query]}%").first(8)
+      else
+        @players = Player.first(8)
+      end
+      @positions = ['Goalkeeper', 'Right Back', 'Left Back', 'Center Back', 'Sweeper', 'Left Wing', 'Right Wing', 'Defensive Midfield', 'Centre Midfield', 'Attacking Midfield', 'Left Midfield', 'Right Midfield', 'Stiker' ]
+      # @players = Player.where.not(id: @team.players).order(name: :asc)
+      # @players = Player.find(:all, conditions: ['name LIKE ?', "%#{params[:search]}%"])
       render :new
     end
   end
