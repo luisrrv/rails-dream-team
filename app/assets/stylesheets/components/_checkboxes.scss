@@ -1,10 +1,14 @@
+.form {
+  margin-bottom: 120px;
+}
 .category-wrapper {
   display: grid;
   justify-content: start;
+  align-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 8px;
   flex-wrap: wrap;
-  overflow: scroll;
+  // overflow: scroll;
 }
 
 .category-item {
@@ -72,9 +76,9 @@
 
 .search-btn {
   border-radius: 36px;
-  border: none;
-  background-color: $blue;
-  color: $light-gray;
+  border: 1px solid $blue;
+  color: $blue;
+  background-color: rgb(21, 21, 21);
   padding: 8px 20px;
 }
 .search-form{
@@ -86,4 +90,51 @@
 .search-bar {
   max-width: 400px;
   padding: 8px 16px;
+  background-color: rgb(30, 30, 30);
+  color: $light-gray;
+}
+
+.add-btn {
+  border-radius: 36px;
+  border: none;
+  border: 1px solid $blue;
+  color: $blue;
+  background-color: rgb(21, 21, 21);
+  padding: 8px 20px;
+}
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .category-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .category-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .category-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .category-wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .category-wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

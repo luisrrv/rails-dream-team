@@ -17,10 +17,10 @@
   %>
     <%= submit_tag "Search", class: "search-btn" %>
   <% end %>
-  <div class="container card p-4 bg-dark mt-2">
+  <div class=" form container card p-4 bg-dark mt-2">
     <%# <h1>Spawn a Monster</h1> %>
     <%= simple_form_for [@team, @signing] do |f| %>
-      <%= f.association :player, collection: @players, as: :radio_buttons, collection_wrapper_tag: 'div',
+      <%= f.association :player, collection: @players, as: :radio_buttons, checked: @players[0], collection_wrapper_tag: 'div',
         collection_wrapper_class: 'category-wrapper',
         item_wrapper_class: 'category-item',
         input_html: {class: 'category-selector'}, class: 'new-place-input', label: "Player (Search to see more players)" %>
@@ -29,7 +29,7 @@
         item_wrapper_class: 'category-item',
         input_html: {class: 'category-selector'}, class: 'new-place-input', checked: 'Goalkeeper' %>
       <%# <%= f.input :image_url %>
-      <%= f.submit 'Add', class: 'btn btn-light' %>
+      <%= f.submit 'Add', class: 'add-btn' %>
     <% end %>
   </div>
 </div>
