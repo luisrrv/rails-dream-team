@@ -65,3 +65,25 @@
   background-color: #62DDF5;
   border-color: #62DDF5;
 }
+
+#query {
+  border-radius: 36px;
+}
+
+.search-btn {
+  border-radius: 36px;
+  border: none;
+  background-color: $blue;
+  color: $light-gray;
+  padding: 8px 20px;
+}
+.search-form{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+.search-bar {
+  max-width: 400px;
+  padding: 8px 16px;
+}
