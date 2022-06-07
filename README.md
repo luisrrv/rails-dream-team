@@ -1,6 +1,8 @@
 # ⚽️ Fantasy Dream Team
 
 An app where you can build your dream football team by selecting famous players and adding them to your custom teams.
+<br>
+Football players' data comes from API-FOOTBALL.
 
 <p float="left">
   <img src="https://user-images.githubusercontent.com/69304255/172331389-01b2e77e-fb6e-42cb-a6bd-b2a14fcd3b6c.png" width="400" />
@@ -30,9 +32,10 @@ Create `.env` file
 ```
 touch .env
 ```
-Inside `.env`, set these variables. For any APIs, see group Slack channel.
+Inside `.env`, set these variables.
 ```
 CLOUDINARY_URL=your_own_cloudinary_url_key
+API_FOOTBALL_KEY=your_own_api_football_key
 ```
 
 ### DB Setup
