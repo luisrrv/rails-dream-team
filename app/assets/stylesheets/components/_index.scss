@@ -77,26 +77,88 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+.cards2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  place-items: center;
+  grid-row-gap: 48px;
+  // padding: 8px 24px;
+
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards2 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards2 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
 
 
 .card-product {
+  position: relative;
   overflow: hidden;
-  height: 120px;
-  background: rgba(53, 54, 60, 0.932);
+  // height: 120px;
+  color: rgb(232, 232, 232);
+  background: rgba(255, 255, 255, 0.932);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  border-radius: 3rem;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  border-radius: 8px;
   font-family: 'Poppins', sans-serif;
   position: relative;
+  width: 200px;
+  .card-product-infos {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+  }
   &:hover .trash-btn {
     display: block;
   }
 }
+.grad1 img {
+
+  // -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgb(0, 0, 0)), to(rgba(0, 0, 0, 0.518)))
+}
 
 .card-product img {
-  height: 100%;
-  width: 120px;
+  filter: brightness(70%);
+  // position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  // width: 120px;
   object-fit: cover;
 }
 
@@ -104,6 +166,8 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .card-product p {
@@ -112,6 +176,8 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .card-product .card-product-infos {
@@ -120,8 +186,8 @@
 
 .trash-btn {
   position: absolute;
-  top: 48px;
-  right: 28px;
+  top: 8px;
+  right: 12px;
   display: none;
 }
 .notice {
