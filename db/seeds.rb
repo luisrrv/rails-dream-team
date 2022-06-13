@@ -19,6 +19,7 @@ Signing.destroy_all
 Player.destroy_all
 Team.destroy_all
 
+# .parameterize(separator: ' ')
 
 # pl_url = URI("https://api-football-v1.p.rapidapi.com/v3/players?league=39&season=2021&page=1")
 
@@ -203,34 +204,34 @@ puts "Creating ligue 1 players.."
 end
 
 
-puts "Creating primeira liga players.."
-36.times do |i|
-  puts '...'
-  primeiraliga_url = URI("https://api-football-v1.p.rapidapi.com/v3/players?league=39&season=2021&page=#{i}")
+# puts "Creating primeira liga players.."
+# 36.times do |i|
+#   puts '...'
+#   primeiraliga_url = URI("https://api-football-v1.p.rapidapi.com/v3/players?league=39&season=2021&page=#{i}")
 
-  # url = URI("https://api-football-v1.p.rapidapi.com/v3/players?league=39&season=2021&page=1")
+#   # url = URI("https://api-football-v1.p.rapidapi.com/v3/players?league=39&season=2021&page=1")
 
-  http = Net::HTTP.new(primeiraliga_url.host, primeiraliga_url.port)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+#   http = Net::HTTP.new(primeiraliga_url.host, primeiraliga_url.port)
+#   http.use_ssl = true
+#   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-  request = Net::HTTP::Get.new(primeiraliga_url)
-  request["X-RapidAPI-Host"] = 'api-football-v1.p.rapidapi.com'
-  request["X-RapidAPI-Key"] = api_key
+#   request = Net::HTTP::Get.new(primeiraliga_url)
+#   request["X-RapidAPI-Host"] = 'api-football-v1.p.rapidapi.com'
+#   request["X-RapidAPI-Key"] = api_key
 
-  response = http.request(request)
+#   response = http.request(request)
 
 
 
-  my_hash = JSON.parse(response.read_body)
-  my_hash["response"].each do |result|
-    file = URI.open("#{result["player"]["photo"]}")
-    # puts "#{result["player"]["firstname"]} #{result["player"]["lastname"]}"
-    player = Player.create!(name: "#{result["player"]["firstname"]} #{result["player"]["lastname"]}")
-    player.photo.attach(io: file, filename: "image#{i}.png")
-    # puts result
-  end
-end
+#   my_hash = JSON.parse(response.read_body)
+#   my_hash["response"].each do |result|
+#     file = URI.open("#{result["player"]["photo"]}")
+#     # puts "#{result["player"]["firstname"]} #{result["player"]["lastname"]}"
+#     player = Player.create!(name: "#{result["player"]["firstname"]} #{result["player"]["lastname"]}")
+#     player.photo.attach(io: file, filename: "image#{i}.png")
+#     # puts result
+#   end
+# end
 
 puts "Created #{Player.count} players"
 
