@@ -1,6 +1,6 @@
 # ⚽️ Fantasy Dream Team
 
-An app where you can build your dream football team by selecting famous players and adding them to your custom teams.
+An app where you can build your dream football team by selecting players from Europe's top 5 leagues and adding them to your custom teams.
 <br>
 Football players' data comes from API-FOOTBALL.
 
