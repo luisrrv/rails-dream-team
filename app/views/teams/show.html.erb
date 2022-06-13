@@ -10,9 +10,9 @@
   </nav>
   <h1><%= @team.name %></h1>
 </div>
-<div class="cards m-3 p-3">
+<div class="cards2 m-3 p-3">
   <% @signings.each do |signing| %>
-    <div class="card-product">
+    <div class="card-product grad1">
       <%= cl_image_tag signing.player.photo.key %>
       <div class="card-product-infos">
         <h2><%= signing.player.name %></h2>
