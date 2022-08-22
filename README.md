@@ -12,7 +12,9 @@ Football players' data comes from API-FOOTBALL.
 </p>
 
 <br>
-App home: https://fantasy-dream-team.herokuapp.com/
+
+### Check out the app ⬇️
+### https://fantasy-dream-team.herokuapp.com/
    
 
 ## Getting Started
